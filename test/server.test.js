@@ -15,7 +15,10 @@ describe("Home page route shows an error", () => {
 describe("v2/ functionality", () => {
 
 	it("v2/ POST receives data correctly", async () => {
-		const response = await request(app).post("/v2/").send({
+		const response = await 
+		request(app)
+		.post("/v2/")
+		.send({
 			movie: "Dune"
 		});
 
@@ -30,6 +33,7 @@ describe("v2/ functionality", () => {
 		*/
 
 		expect(response.body.data.movie).toBe("Dune");
+		expect(response.body.data.movie).toBeTruthy();
 	})
 
 });
